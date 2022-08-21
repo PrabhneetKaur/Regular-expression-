@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Regular Expression part 2</title>
+        <script type ="text/javascript">
+        function validate()
+       {
+           var u1 = document.getElementById("use").value;
+          // regx = new RegExp("neet" , "i");//this is another way of creating regular expressions//
+           //"RegExp" is an "INBUILT CONSTRUCTOR"// //this is "OBJECT ORIENTED" way of creting "regx" object// //"i" in the above statemnet is called "FLAG" , it make the search "CASE INSENSITIVE"//
+            var regx = /[abc]simple/i;//if we want to include "SET OF CHARACTERS" as the validation then , use "SQUARE BRACKETS"//
+             //"POSITION" of "SQUARE BRACKET" can be used to decide the the "ORDER" of the character in the "SET"//
+           
+   // var regx = /[^abc]simple/i;
+   //         
+            if (regx.test(u1))//"regx" is tteatded as an object and "test()" is treated as a method of "test object"//
+            {
+                alert("valid username");
+                document.getElementById("lab1").style.visibility="hidden";
+            }
+            else 
+            {
+                alert("invalid username");
+                document.getElementById("lab1").style.visibility="visible";
+            }
+
+            
+       }
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder = "Username" id="use">
+        <label style="color:red ; visibility:hidden" id = "lab1"></label>
+        <br>
+        <br>
+        <br>
+        <button type="button" onclick = validate() >SUBMIT</button>
+    </body>
+</html>

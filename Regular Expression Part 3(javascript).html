@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Regular Expression Part 3</title>
+        <script type = "text/javascript">
+        /*
+        \d - match any digit (equal to [0-9])
+        \w - match any word character ( a-z , A-Z , & , _ )
+        \s - match whitespace character (example - spaces & tabs)
+        \t - match a tab only
+        */
+       function validate()
+       {
+       var mobile = document.getElementById("mob").value;
+       var regx = /[7-9]\d{9}/;
+        if(regx.test(mobile))
+        {
+            document.getElementById("lab1").innerHTML= "Valid";
+            document.getElementById("lab1").style.visibility = "visible";
+            document.getElementById("lab1").style.color = "green";
+
+        }
+        else
+        {
+            document.getElementById("lab1").innerHTML = " Invalid";
+            document.getElementById("lab1").style.visibility ="visible";
+            document.getElementById("lab1").style.color = "red";
+        }
+    }
+
+        
+
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="Mobile Number" id = "mob">
+        <label  id = "lab1" style = "color:red ; visibility: hidden">Invalid</label>
+        <br>
+        <br>
+        <br>
+        <button type = "button" onclick = " validate()">Submit</button>
+
+    </body>
+</html>
